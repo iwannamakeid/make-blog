@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+<h1>hello world</h1>
+    <button a href="{% url 'create' %}"> write</a></button>
+    
+    <!-- {%for post in post_list %} -->
+    <a href="{% url 'detail' post.id %}"> 
+        <div>
+            <!-- post id에 맞는 detail로 넘어감 --> 
+            {{post.title}}
+        </div>
+        <!--<div>{{post.content}}</div>-->
+        </a>     
+    
+    <!-- {% for post in post_list %}: 이 리스트에서 각각의 포스트를 순회해서 보여줘라-->
+    <!-- {{post}} : post 목록도 아닌 post.object라는 담백한 글귀만 보여줌. -->
+     
+    {% endfor %} 
+
+<h2> 글자수 세기</h2>
+<form action="{% url 'result' %}">
+    <textarea cols="40" rows="10" name="fulltext"></textarea>
+    <br>
+    <input type="submit" value="COUNT!"/>
+</form>
+</body>
+</html>
+
