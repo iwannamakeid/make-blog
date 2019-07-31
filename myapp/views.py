@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post, Comment
 
 # Create your views here.: 어떤 데이터가 어떻게 처리될 지 알려주는 함수! model과 templates를 연결.
