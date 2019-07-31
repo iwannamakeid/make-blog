@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import myproject.myapp.views
+import myapp.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', myproject.myapp.views.main, name='main'),
+    path ('', myapp.views.main, name='main'),
     # id는 꺾쇠: post_id는 변수로
-    path ('<int:post_id>', myproject.myapp.views.detail, name='detail'),
-    path('create/', myproject.myapp.views.create, name="create"),
-    path('<int:post_id>/delete',myproject.myapp.views.delete, name='delete'),
-    path('<int:post_id>/edit',myproject.myapp.views.edit, name='edit'),
-    path('<int:post_id>/comment', myproject.myapp.views.comment_create, name='comment'),
-    path('result', myproject.myapp.views.result, name='result'),
-    path('post/<int:post_id>', myproject.myapp.views.more, name="more" ),
+    path ('<int:post_id>', myapp.views.detail, name='detail'),
+    path('create/', myapp.views.create, name="create"),
+    path('<int:post_id>/delete',myapp.views.delete, name='delete'),
+    path('<int:post_id>/edit',myapp.views.edit, name='edit'),
+    path('<int:post_id>/comment', myapp.views.comment_create, name='comment'),
+    path('result', myapp.views.result, name='result'),
+    path('post/<int:post_id>', myapp.views.more, name="more" ),
 
 ]
